@@ -1,0 +1,32 @@
+{
+  "name": "multi-project-organizer",
+  "version": "1.0.0",
+  "description": "Solo Project -- a multi-project-organizer to keep track of where you left off on various projects.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server/server.js",
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development \"nodemon server/server.js\" \"webpack-dev-server --open --hot\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annieshinn/multi-project-organizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annieshinn/multi-project-organizer/issues"
+  },
+  "homepage": "https://github.com/annieshinn/multi-project-organizer#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15",
+    "nodemon": "^2.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
