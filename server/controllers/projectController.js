@@ -1,13 +1,13 @@
-const Model = require('../models/projectModels');
+const Model = require('../models');
 const ProjectModel = Model.ProjectModel;
 
 const projectController = {
 
   createProject(req, res) {
     // console.log('req: ', req);
-    const { title, description } = req.body;
+    const { projectName, description, tasks = [] } = req.body;
     ProjectModel
-      .create({title, description})
+      .create({projectName, description, tasks})
       .then((data) => {
         console.log('/// Created project data: ', data);
         return res.status(200).send(data);
@@ -33,10 +33,10 @@ const projectController = {
 
   getProject(req, res) {
     ProjectModel
-      .find({title: req.params.title})
+      .find({projectName: req.params.projectName})
       .then((data) => {
         console.log('/// Found project data: ', data);
-        // return JUST THE FIRST of the array! (if multiple w/ sam etitle)
+        // return JUST THE FIRST of the array! (if multiple w/ same title)
         return res.status(200).send(data[0]);
       })
       .catch((err) => {
@@ -46,11 +46,11 @@ const projectController = {
   },
 
   updateProject(req, res) {
-    const { title, description } = req.body;
+    const { projectName, description } = req.body;
     ProjectModel
-      .findOneAndUpdate({title: req.params.title}, {title, description}, {new: true})
+      .findOneAndUpdate({projectName: req.params.projectName}, {projectName, description}, {new: true})
       .then((data) => {
-        console.log('req.params.title: ', req.params.title);
+        console.log('req.params.projectName: ', req.params.projectName);
         console.log('/// Updated project data: ', data);
         return res.status(200).send(data);
       })
@@ -62,7 +62,7 @@ const projectController = {
 
   deleteProject(req, res) {
     ProjectModel
-      .findOneAndDelete({title: req.params.title})
+      .findOneAndDelete({projectName: req.params.projectName})
       .then((data) => {
         console.log('/// Deleted project data: ', data);
         return res.status(200).send(data);

@@ -43,13 +43,13 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
 ## BACKEND/SERVER:
   - [X] Get localhost:3000 connected
   - [X] Get mongoDB connected
-  - [ ] Set up file structure for server side (controllers, models, routes)
-  - Using postman.. (mimic the assessment...?)
-    - [ ] C create new project
-    - [ ] C create new task
-    - [ ] R read task (in return body)
-    - [ ] U edit a task/project
-    - [ ] D delete a task/project
+  - [X] Set up file structure for server side (controllers, models, routes)
+  - Using postman.. (mimic the assessment...?) -- for PROJECTS
+    - [X] C create new project
+    - [X] R read project (in return body)
+    - [X] U edit a project
+    - [X] D delete a project
+  - [X] Now repeat for TASKS :D
 
 ## FRONTEND PT 2:
 - [ ] Complete components
