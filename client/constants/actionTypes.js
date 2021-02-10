@@ -14,4 +14,4 @@
 // export const ACTION_DESCRIPTION = "ACTION_DESCRIPTION";
 // export const ACTION_DESCRIPTION = "completed"
 
-export const ADD_MARKET = "ADD_MARKET"
+export const GET_DATA = "GET_DATA"

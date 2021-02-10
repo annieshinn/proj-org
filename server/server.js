@@ -8,7 +8,8 @@ const projectRouter = require('./routes/project.js');
 
 const PORT = 3000;
 
-mongoose.connect('mongodb+srv://dbUser:duckmon420@cluster0.enzre.mongodb.net/multi-proj-org?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect('mongodb+srv://dbUser:duckmon420@cluster0.enzre.mongodb.net/multi-proj-org?retryWrites=true&w=majority',
+  { useUnifiedTopology: true, useNewUrlParser: true });
 
 mongoose.connection
   .once('open', () => {

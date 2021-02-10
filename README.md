@@ -51,6 +51,16 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
     - [X] D delete a project
   - [X] Now repeat for TASKS :D
 
+## CONNECT FRONTEND BACKEND:
+- [X] Try to get the database info to transfer to react state
+  - was a struggle but I DID IT!!
+  - use "proxy" for webpack-dev-server to work
+  - used a fetch request in "container"
+
 ## FRONTEND PT 2:
-- [ ] Complete components
-- [ ] Pass down data as props
+- [X] Complete components
+- [X] Pass down data as props
+
+## BACKEND PT 2:
+- [ ] Add "task" functionality
+- [ ] Connect and test -- see it on the webpage

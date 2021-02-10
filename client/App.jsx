@@ -2,28 +2,34 @@
  * ************************************
  *
  * @module  App.jsx
- * @author
- * @date
- * @description
+ * @description Stateful component that renders Containner
  *
  * ************************************
  */
 
 import React, { Component } from 'react';
-// import { render } from 'react-dom';
+import projectController from '../server/controllers/projectController.js';
 import Container from './Container.jsx';
-// import addCard from './actions/actions.js'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      whereamiused: 'i dunno',
     }
+  }
+  
+  componentDidMount() {
+    console.log('App mounted!')
+  }
+  
+  componentDidUpdate() {
+    console.log('App updated!\nNew App state: ', this.state);
   }
 
   render() {
     console.log('App props:', this.props);
+    console.log('App state:', this.state);
     return(
       <div>
         <h1>App Header</h1>
