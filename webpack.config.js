@@ -5,7 +5,34 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/build/',
   },
   mode: process.env.NODE_ENV,
+  // mode: 'development',
+
+  module: {
+    rules: [
+      { // rules for JSX from babel
+        test: /\.jsx?/,
+        exclude: path.resolve(__dirname, 'node_modules'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
+      },
+    ],
+  },
+  
+  devServer: { // last property..?
+    // contentBase:,
+    contentBase: './client/',
+    publicPath: '/build/',
+    proxy:{
+      '/api': 'http://localhost:3000'
+    },
+    hot: true,
+  },
+
 };
