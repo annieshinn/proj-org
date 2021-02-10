@@ -42,7 +42,8 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
 
 ## BACKEND/SERVER:
   - [X] Get localhost:3000 connected
-  - [ ] Get mongoDB connected
+  - [X] Get mongoDB connected
+  - [ ] Set up file structure for server side (controllers, models, routes)
   - Using postman.. (mimic the assessment...?)
     - [ ] C create new project
     - [ ] C create new task

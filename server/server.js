@@ -1,20 +1,46 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mongoose = require('mongoose');
+// const projectController = require('./client/')
 
-// uncomment the below for proxy challenge
-/*
-const leaderList = [
-  {name: 'Anna', id: 'a0'},
-  {name: 'Ben', id: 'b0'},
-  {name: 'Clara', id: 'c0'},
-  {name: 'David', id: 'd0'},
-];
+const PORT = 3000;
 
-app.get('/api/leaders', (req, res) => {
-  return res.status(200).send(leaderList);
-});
-*/
+mongoose.connect('mongodb+srv://dbUser:duckmon420@cluster0.enzre.mongodb.net/multi-proj-org?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true });
+
+mongoose.connection
+  .once('open', () => {
+    console.log('Connected to Database');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+const projectRouter = express.Router();
+app.use('/project', projectRouter);  
+
+// Create a project in the database
+// http://localhost:3000/project
+// projectRouter.post('/', studentController.createStudent);
+
+// Get ALL projects from the database
+// http://localhost:3000/project/all
+projectRouter.get('/all', studentController.getAllStudents);
+
+// Get a project from the database
+// http://localhost:3000/project/"name"
+projectRouter.get('/:name', studentController.getStudent);
+
+// Change a project name
+// http://localhost:3000/project/"name"
+// projectRouter.patch('/:name', studentController.updateStudent);
+
+// Delete a project from the database
+// // http://localhost:3000/project/"name"
+// projectRouter.delete('/:name', studentController.deleteStudent);
 
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../build')));
@@ -24,11 +50,18 @@ app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
 
-
-
 // serve index.html on the route '/'
-app.get('/a', (req, res) => {
-  return res.status(200).send('hello');
+app.get('/styles.css', (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../client/styles.css'));
 });
 
-app.listen(3000); //listens on port 3000 -> http://localhost:3000/
+// // serve index.html on the route '/'
+// app.get('/a', (req, res) => {
+//   return res.status(200).send(studentRouter);
+// });
+
+
+app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
+
+
+// mongodb+srv://dbUser:duckmon420@cluster0.enzre.mongodb.net/multi-proj-org?retryWrites=true&w=majority

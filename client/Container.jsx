@@ -16,7 +16,7 @@ import { connect } from 'react-redux';
 
 //sends in all the data
 const mapStateToProps = state => ({
-  projects: state.project
+  projects: state.projectR
 });
 
 //sends in all the actions

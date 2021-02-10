@@ -6,7 +6,7 @@ import projectReducer from './projectReducer';
 // combine reducers
 const reducers = combineReducers({
   // if we had other reducers, they would go here
-  project: projectReducer,
+  projectR: projectReducer,
 });
 
 // make the combined reducers available for import
