@@ -19,6 +19,11 @@ app.get('/api/leaders', (req, res) => {
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
+// serve styles.css on the route '/styles.css'
+// app.get('/client/styles.css', (req, res) => {
+//   return res.status(200).sendFile(path.join(__dirname, '../client/styles.css'));
+// });
+
 // serve index.html on the route '/'
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));

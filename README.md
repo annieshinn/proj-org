@@ -16,17 +16,29 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
   - [X] Client folder
     - [X] index.js, components folder -> App.js
       - this is where i need to use react & redux!
-    - [ ] css would go here
+    - [X] css would go here
   - [X] Server folder
     - [X] server.js
       - this is where i need to use express!
 --- commit 1 ---
 - [X] Hand draw front-end React Components and back-end
-after some struggle...deciding to step back on the webpack-dev-server stuff for now
-... after some more struggle... i am stepping back FOR REAL. will just work with "npm run buildStart" for now!
-- [ ] [Webpack](https://webpack.js.org/concepts/).. stuff
-  - [ ] Follow along unit instructions to get basic properties on module.exports
-- [ ] Backend:
+
+---- MF FINALLY GOT WEBPACK-DEV-SERVER TO WORK BEFORE DINNER!!!! ----
+
+- [X] [Webpack](https://webpack.js.org/concepts/).. stuff
+  - [X] Follow along unit instructions to get basic properties on module.exports
+  - [X] Finalize compatiblity with css, react, 
+  - [X] use nodemon and webpack-dev-server
+
+## FRONTEND: 
+- [X] Get something to show on localhost:3000
+- [ ] Connect React/Redux components in client folder
+  - [ ] createStore -> connect redux extension
+  - [ ] make files for several components; connect all
+- [ ] Setup a basic CSS file
+
+
+## BACKEND:
   - [ ] Get localhost:3000 connected
   - Using postman.. (mimic the assessment...?)
     - [ ] C create new project
@@ -34,10 +46,3 @@ after some struggle...deciding to step back on the webpack-dev-server stuff for 
     - [ ] R read task (in return body)
     - [ ] U edit a task/project
     - [ ] D delete a task/project
-
-## FRONTEND: 
-- [X] Get something to show on localhost:3000
-- [ ] Connect React/Redux components in client folder
-  - [ ] createStore
-  - [ ] 
-- [ ] Setup a basic CSS file

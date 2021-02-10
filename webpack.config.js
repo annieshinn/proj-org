@@ -22,6 +22,11 @@ module.exports = {
           }
         }
       },
+      { // rules for css/scss
+        test: /.(css|scss)$/,
+        exclude: path.resolve(__dirname, 'node_modules'),
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   

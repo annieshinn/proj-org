@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/annieshinn/multi-project-organizer#readme",
   "devDependencies": {
+    "css-loader": "^5.0.2",
     "express": "^4.17.1",
     "mongoose": "^5.11.15",
     "nodemon": "^2.0.7",
@@ -31,6 +32,8 @@
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2"
