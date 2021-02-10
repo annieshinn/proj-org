@@ -28,7 +28,7 @@ class Task extends Component {
     console.log('Task props: ', this.props.taskInfo);
 
     return (
-      <div> 
+      <div className='task'> 
         
       <h1>task name: {this.props.taskInfo.taskName}</h1>
         description: {this.props.taskInfo.description}
