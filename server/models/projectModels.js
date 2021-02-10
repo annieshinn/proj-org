@@ -10,10 +10,10 @@ const projectSchema = new Schema({
 });
 
 // You must export your model through module.exports
-const Projects = mongoose.model('species', projectSchema);
+const ProjectModel = mongoose.model('Project', projectSchema);
 
 // exports all the models in an object to be used in the controller
 module.exports = {
-  Projects,
+  ProjectModel,
   // Tasks
 };

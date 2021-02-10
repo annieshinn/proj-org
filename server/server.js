@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
-// const projectController = require('./client/')
+const projectController = require('./controllers/projectController')
 
 const PORT = 3000;
 
@@ -24,23 +24,23 @@ app.use('/project', projectRouter);
 
 // Create a project in the database
 // http://localhost:3000/project
-// projectRouter.post('/', studentController.createStudent);
+projectRouter.post('/', projectController.createProject);
 
 // Get ALL projects from the database
 // http://localhost:3000/project/all
-projectRouter.get('/all', studentController.getAllStudents);
+projectRouter.get('/all', projectController.getAllProjects);
 
 // Get a project from the database
-// http://localhost:3000/project/"name"
-projectRouter.get('/:name', studentController.getStudent);
+// http://localhost:3000/project/"title"
+projectRouter.get('/:title', projectController.getProject);
 
-// Change a project name
-// http://localhost:3000/project/"name"
-// projectRouter.patch('/:name', studentController.updateStudent);
+// Edit a project (title and description)
+// http://localhost:3000/project/"title"
+projectRouter.patch('/:title', projectController.updateProject);
 
 // Delete a project from the database
-// // http://localhost:3000/project/"name"
-// projectRouter.delete('/:name', studentController.deleteStudent);
+// // http://localhost:3000/project/"title"
+projectRouter.delete('/:title', projectController.deleteProject);
 
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../build')));
