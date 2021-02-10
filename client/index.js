@@ -1,20 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
+import App from './App.jsx';
+import store from './store';
+import { Provider } from 'react-redux';
 
 // uncomment so that webpack can bundle styles
 // import styles from './scss/application.scss';
 
 render(
-  <App />,
+  <Provider store = {store}>
+     <App />
+  </Provider>,
   document.getElementById('root')
 );
 
 
-
-
-// import { Provider } from 'react-redux';
-// import store from './store';
 
 // render(
 //   // wrap the App in the Provider and pass in the store

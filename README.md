@@ -30,19 +30,26 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
   - [X] Finalize compatiblity with css, react, 
   - [X] use nodemon and webpack-dev-server
 
-## FRONTEND: 
+## FRONTEND: REACT/REDUX 
 - [X] Get something to show on localhost:3000
-- [ ] Connect React/Redux components in client folder
-  - [ ] createStore -> connect redux extension
-  - [ ] make files for several components; connect all
-- [ ] Setup a basic CSS file
+- [X] Connect React/Redux components in client folder
+  - [X] createStore -> connect redux extension
+  - [X] Create reducers: combiner, projects, and task
+  - [X] Create container
+  - [X] Create components: Project, Task
+  - [X] Connect components
+- [X] Setup a basic CSS file
 
-
-## BACKEND:
-  - [ ] Get localhost:3000 connected
+## BACKEND/SERVER:
+  - [X] Get localhost:3000 connected
+  - [ ] Get mongoDB connected
   - Using postman.. (mimic the assessment...?)
     - [ ] C create new project
     - [ ] C create new task
     - [ ] R read task (in return body)
     - [ ] U edit a task/project
     - [ ] D delete a task/project
+
+## FRONTEND PT 2:
+- [ ] Complete components
+- [ ] Pass down data as props
