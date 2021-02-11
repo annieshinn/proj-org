@@ -39,9 +39,9 @@ class Task extends Component {
       
 
       <div className="buttonArea">
-          <button id="editTask">Edit Task</button>
-          <button id="completeTask">Complete Task</button>
-          <button id="moreInfo">More Info</button>
+          {/* <button id="editTask">Edit Task</button> */}
+          {/* <button id="completeTask">Complete Task</button> */}
+          {/* <button id="moreInfo">More Info</button> */}
       </div>
 
       </div>

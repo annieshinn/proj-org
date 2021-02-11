@@ -22,12 +22,48 @@ body{
 
 h1{
   text-align: center;
+  font-size: 4vw;
+  text-shadow: 5px 5px var(--shadow-color);
+  margin-bottom: 0px;
 }
 
 .app{
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  position: relative;
+}
+
+#addProjectModal{
+  width: 20vw;
+  height: 10vw;
+  min-width: 300px;
+  min-height: 200px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--tertiary-bg-color);
+
+  display: none; /* NONE VS FLEX CHANGES HERE */
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+
+  /* STRETCH: popup rather than open
+  position: relative;
+  bottom: 0px;
+  z-index: 1; */
+}
+
+input#projectDescription{
+  height: 60px;
+}
+
+button#submitProject{
+  background-color: var(--main-bg-color);
+  width: 200px;
+  align-self: center;
 }
 
 #projectContainer{
@@ -121,15 +157,10 @@ button{
 input{
   background-color: var(--secondary-font-color);
   color: var(--main-bg-color);
-  margin-right: 15px;
   font-family: Oswald, Arial, Helvetica;
   letter-spacing: 2px;
   box-shadow: 2px 2px 5px var(--shadow-color);
   border-radius: var(--border-radius);
-}
-
-#projectInput{
-  width: 300px;
 }
 
 #taskInput{

@@ -20,17 +20,29 @@ export const getData = (data) => ({
 
 export const makeProject = () => ({
   type: types.MAKE_PROJECT,
-  payload: 'asdf',
+  payload: 'project modal opened',
 });
 
-// export const addCard = (marketId) => ({
-//   type: types.ADD_CARD,
-//   payload: marketId
-// });
+export const cancelProject = () => ({
+  type: types.CANCEL_PROJECT,
+  payload: 'project modal closed',
+});
 
-// export const deleteCard = (marketId) => ({
-//   type: types.DELETE_CARD,
-//   payload: marketId
+export const renderProject = () => ({
+  type: types.RENDER_PROJECT,
+  payload: 'project rendered',
+});
+
+export const setNewProjName = (inputVal) => ({
+  type: types.SET_PROJECT_NAME,
+  payload: inputVal,
+});
+
+export const setNewProjDesc = (inputVal) => ({
+  type: types.SET_PROJECT_DESC,
+  payload: inputVal,
+});
+
 // })
 
 // // add more action creators

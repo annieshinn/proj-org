@@ -28,12 +28,13 @@ class Project extends Component {
   render() {
     console.log('Project props: ', this.props.projectInfo);
     
-    const taskArr = [];
+    const taskArr = this.props.projectInfo.tasks
 
-    this.props.projectInfo.tasks.reverse().forEach((task, i) => {
-      // console.log(task);
-      taskArr.push(<Task taskInfo={task} key={i}/>)
-    });
+    const taskComponentsArr = [];
+
+    for (let i = 0; i < taskArr.length; i += 1) {
+      taskComponentsArr.push(<Task taskInfo={taskArr[i]} key={i}/>)
+    }
 
     return (
       <div className='project'> 
@@ -48,13 +49,13 @@ class Project extends Component {
       </div>
 
       <div className="buttonArea">
-          <button id="editProject">Edit Project</button>
-          <input id="taskInput"></input>
-          <button id="addTask">Add Task</button>
+          {/* <button id="editProject">Edit Project</button> */}
+          {/* <input id="taskInput"></input> */}
+          {/* <button id="addTask">Add Task</button> */}
       </div>
 
       <div id='taskContainer'>
-        {taskArr}
+        {taskComponentsArr}
       </div>
       </div>
     );

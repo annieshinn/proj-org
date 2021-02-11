@@ -14,6 +14,8 @@ import * as types from "../constants/actionTypes";
 
 const initialState = {
   projects: [],
+  newProj: '',
+  newProjDesc: '',
 };//{
 //   totalMarkets: 0,
 //   totalCards: 0,
@@ -38,13 +40,57 @@ const projectReducer = (state = initialState, action) => {
     }
 
     case types.MAKE_PROJECT: {
-      // increment lastMarketId and totalMarkets counters
       console.log("MAKE_PROJECT running!");
       console.log('action payload: ', action.payload);
+
+      document.getElementById('addProjectModal').style.display='flex';
+      document.getElementById('addProject').style.display='none';
 
       return {
         ...state
       }
+    }
+
+    case types.CANCEL_PROJECT: {
+      console.log("CANCEL_PROJECT running!");
+      console.log('action payload: ', action.payload);
+
+      document.getElementById('addProjectModal').style.display='none';
+      document.getElementById('addProject').style.display='block';
+
+      return {
+        ...state
+      }
+    }
+
+    case types.RENDER_PROJECT: {
+      console.log("RENDER_PROJECT running!");
+      console.log('action payload: ', action.payload);
+
+      document.getElementById('addProjectModal').style.display='none';
+      document.getElementById('addProject').style.display='block';
+
+      return {
+        ...state,
+        newProj: '',
+        newProjDesc: '',
+      }
+    }
+
+    case types.SET_PROJECT_NAME: {
+      console.log("set new proj running!");
+      return {
+        ...state,
+        newProj: action.payload,
+      };
+    }
+
+    case types.SET_PROJECT_DESC: {
+      console.log("set new proj desc running!");
+      return {
+        ...state,
+        newProjDesc: action.payload,
+      };
     }
 
     default: {

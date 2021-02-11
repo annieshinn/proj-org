@@ -27,13 +27,6 @@ class ProjectContainer extends Component {
   
   render() {
     console.log('Project props: ', this.props.projectInfo);
-    
-    const taskArr = [];
-
-    this.props.projectInfo.tasks.reverse().forEach((task, i) => {
-      // console.log(task);
-      taskArr.push(<Task taskInfo={task} key={i}/>)
-    });
 
     return (
       <div>hello from project container</div>

@@ -72,5 +72,10 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
 
 --- commiting here to end day2 02/10 ---
 
+## FRONTEND: BUCKLE DOWN
+- [X] Narrow down buttons for now... focus on "Add Project"
+- [X] Create modal for "add project"
+- [X] Get "Add Project" button to open modal! (+closing buttons)
+
 ## CONNECT FRONTEND BACKEND:
-- [ ] Get "Add Project" button to work!
+- [X] From modal, get submit button to work! -> send data to DB
