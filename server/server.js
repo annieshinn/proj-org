@@ -3,8 +3,8 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 
-const projectController = require('./controllers/projectController.js')
-const projectRouter = require('./routes/project.js');
+const projectController = require('./controller.js')
+const projectRouter = require('./routes.js');
 
 const PORT = 3000;
 

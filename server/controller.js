@@ -1,7 +1,46 @@
-const Model = require('../models');
-const ProjectModel = Model.ProjectModel;
+const { ProjectModel, TaskModel } = require('./models');
 
-const projectController = {
+const controller = {
+
+  createTask(req, res, next) {
+    const { taskName, description, complete = false } = req.body;
+    TaskModel
+      .create({taskName, description, complete})
+      .then((data) => {
+        console.log('/// Created task object: ', data)
+        res.locals.newTask = data;
+        next();
+      })
+      .catch((err) => {
+        return res.status(404).send({err: 'Error creating/POST-ing task'});
+      });
+  },
+
+  updateProjectTasks(req, res) {
+    ProjectModel
+      .findOneAndUpdate({projectName: req.params.projectName}, {$push: {tasks: res.locals.newTask}}, {new: true})
+      .then((data) => {
+        console.log('req.params.projectName: ', req.params.projectName);
+        console.log('/// Updated project tasks: ', data);
+        return res.status(200).send(data);
+      })
+      .catch((err) => {
+        return res.status(404).send({err: 'Error updating/PATCH-ing project data re:tasks'});
+      });
+
+  },
+
+  // deleteTask(req, res) {
+  //   TaskModel
+  //     .findOneAndDelete({taskName: req.params.taskName})
+  //     .then((data) => {
+  //       console.log('/// Deleted task: ', data);
+  //       return res.status(200).send(data);
+  //     })
+  //     .catch((err) => {
+  //       return res.status(404).send({err: 'Error DELETE-ing task'});
+  //     });
+  // },
 
   createProject(req, res) {
     // console.log('req: ', req);
@@ -9,7 +48,7 @@ const projectController = {
     ProjectModel
       .create({projectName, description, tasks})
       .then((data) => {
-        console.log('/// Created project data: ', data);
+        console.log('/// Created project object: ', data);
         return res.status(200).send(data);
       })
       .catch((err) => {
@@ -73,4 +112,4 @@ const projectController = {
   }
 }
 
-module.exports = projectController;
+module.exports = controller;

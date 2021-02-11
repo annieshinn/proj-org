@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from 'react';
-import projectController from '../server/controllers/projectController.js';
+import controller from '../server/controller.js';
 import Container from './Container.jsx';
 
 class App extends Component {
