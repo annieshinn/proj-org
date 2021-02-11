@@ -18,10 +18,10 @@ export const getData = (data) => ({
   payload: data,
 });
 
-// export const setNewLocation = (inputVal) => ({
-//   type: types.SET_NEW_LOCATION,
-//   payload: inputVal
-// });
+export const makeProject = () => ({
+  type: types.MAKE_PROJECT,
+  payload: 'asdf',
+});
 
 // export const addCard = (marketId) => ({
 //   type: types.ADD_CARD,

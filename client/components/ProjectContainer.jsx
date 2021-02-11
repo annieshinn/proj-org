@@ -1,10 +1,10 @@
 /**
  * ************************************
  *
- * @module Project
+ * @module Project Container
  * @author
  * @date
- * @description stateless component that renders each project
+ * @description stateless component that renders all projects
  *
  * ************************************
  */
@@ -12,7 +12,7 @@
 import React, { Component } from "react";
 import Task from './Task.jsx'
 
-class Project extends Component {
+class ProjectContainer extends Component {
   constructor(props) {
     super(props);
   }
@@ -36,29 +36,9 @@ class Project extends Component {
     });
 
     return (
-      <div className='project'> 
-      
-      <div id='projectInfo'>
-        <h2>project name: {this.props.projectInfo.projectName}</h2>
-
-        <div className="description">
-          description: {this.props.projectInfo.description}
-        </div>
-
-      </div>
-
-      <div className="buttonArea">
-          <button id="editProject">Edit Project</button>
-          <input id="taskInput"></input>
-          <button id="addTask">Add Task</button>
-      </div>
-
-      <div id='taskContainer'>
-        {taskArr}
-      </div>
-      </div>
+      <div>hello from project container</div>
     );
   }
 };
 
-export default Project;
+export default ProjectContainer;

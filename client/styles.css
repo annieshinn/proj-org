@@ -2,16 +2,14 @@
 /* @import './_variables.scss';
 sass variables still not working.. */
 
-
-
 body{
   --main-bg-color: #3B4252;
   --secondary-bg-color: #434C5E;
   --tertiary-bg-color: #4C566A;
 
   --main-font-color: #ECEFF4;
-  --secondary-font-color: #434C5E;
-  --tertiary-font-color: #4C566A;
+  --secondary-font-color: #b1b8c2;
+  --tertiary-font-color: #b1b8c2a2;
 
   --shadow-color: #1d20296c;
   --border-radius: 7px;
@@ -89,11 +87,16 @@ h2{
   margin: 10px;
 }
 
+hr{
+  border: 1px solid var(--tertiary-font-color);
+  border-radius: var(var(--border-radius));
+}
+
 h3{
 }
 
 .description{
-  color:#b1b8c2;
+  color: var(--secondary-font-color)
 }
 
 .buttonArea{
@@ -113,4 +116,25 @@ button{
   padding-right: 10px;
   box-shadow: 2px 2px 5px var(--shadow-color);
   border-radius: var(--border-radius);
+}
+
+input{
+  background-color: var(--secondary-font-color);
+  color: var(--main-bg-color);
+  margin-right: 15px;
+  font-family: Oswald, Arial, Helvetica;
+  letter-spacing: 2px;
+  box-shadow: 2px 2px 5px var(--shadow-color);
+  border-radius: var(--border-radius);
+}
+
+#projectInput{
+  width: 300px;
+}
+
+#taskInput{
+  /* width: 20px; */
+  margin-right: 15px;
+  margin-left: 15px;
+  flex-grow: 1;
 }

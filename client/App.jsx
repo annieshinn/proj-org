@@ -13,6 +13,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions.js';
 import Project from './components/Project.jsx'
+import { Switch, Route } from 'react-router-dom';
 // import marketsReducer from '../reducers/marketsReducer.js'
 
 //sends in all the data
@@ -23,6 +24,7 @@ const mapStateToProps = state => ({
 //sends in all the actions
 const mapDispatchToProps = dispatch => ({
   getData: data => dispatch(actions.getData(data)),
+  makeProject: data => dispatch(actions.makeProject(data)),
 });
 
 class App extends Component {
@@ -58,8 +60,23 @@ class App extends Component {
         <h1 id="header">multi-project-organizer</h1>
 
         <div className="buttonArea">
-          <button id="addProject">Add Project</button>
+          <input id="projectInput"></input>
+          <button id="addProject" onClick={this.props.makeProject}>Add Project</button>
         </div>
+
+
+        {/* <Switch>
+          <Route
+            exact
+            path="/"
+            component={ProjectContainer}
+          />
+          <Route
+            exact
+            path="/create"
+            component={CreateCharacter}
+          />
+        </Switch> */}
 
         <div id="projectContainer">
           {projectArr}

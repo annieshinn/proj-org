@@ -19,6 +19,13 @@ router.post('/:projectName/task',
 
 /// PROJECTS ///
 
+
+// Create a project in the database -> landing page
+// http://localhost:3000/project
+router.get('/', (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../client/newProj.html'));
+});
+
 // Create a project in the database
 // http://localhost:3000/project
 router.post('/', controller.createProject);

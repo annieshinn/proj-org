@@ -31,7 +31,11 @@ class Task extends Component {
       <div className='task'> 
         
       <h3>task name: {this.props.taskInfo.taskName}</h3>
+      <hr></hr>
 
+      <div className="description">
+        description: {this.props.taskInfo.description}
+      </div>
       
 
       <div className="buttonArea">
@@ -40,9 +44,6 @@ class Task extends Component {
           <button id="moreInfo">More Info</button>
       </div>
 
-      <div className="description">
-        description: {this.props.taskInfo.description}
-      </div>
       </div>
     );
   }

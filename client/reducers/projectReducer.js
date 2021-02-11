@@ -35,7 +35,16 @@ const projectReducer = (state = initialState, action) => {
         ...state,
         projects: action.payload,
       }
+    }
 
+    case types.MAKE_PROJECT: {
+      // increment lastMarketId and totalMarkets counters
+      console.log("MAKE_PROJECT running!");
+      console.log('action payload: ', action.payload);
+
+      return {
+        ...state
+      }
     }
 
     default: {

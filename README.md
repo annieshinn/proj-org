@@ -68,3 +68,9 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
 ## FRONTEND PT 3:
 - [X] CSS styling -- make distinct project/task components
     ... tried and failed to use sass/.scss files
+- [X] Make buttons!
+
+--- commiting here to end day2 02/10 ---
+
+## CONNECT FRONTEND BACKEND:
+- [ ] Get "Add Project" button to work!
