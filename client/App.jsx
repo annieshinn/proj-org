@@ -1,42 +1,66 @@
 /**
  * ************************************
  *
- * @module  App.jsx
- * @description Stateful component that renders Containner
+ * @module  Container
+ * @author
+ * @date
+ * @description stateful component that renders...?
  *
  * ************************************
  */
 
 import React, { Component } from 'react';
-import controller from '../server/controller.js';
-import Container from './Container.jsx';
+import { connect } from 'react-redux';
+import * as actions from './actions.js';
+import Project from './components/Project.jsx'
+// import marketsReducer from '../reducers/marketsReducer.js'
+
+//sends in all the data
+const mapStateToProps = state => ({
+  projectState: state.projectR,
+});
+
+//sends in all the actions
+const mapDispatchToProps = dispatch => ({
+  getData: data => dispatch(actions.getData(data)),
+});
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      whereamiused: 'i dunno',
-    }
   }
-  
+
   componentDidMount() {
     console.log('App mounted!')
+    console.log('App props:', this.props);
+    
+    fetch('/project/all')
+      .then((res) => res.json())
+      .then((res) => this.props.getData(res))//this.setState({projects: res}))
+      .catch((err) => err);
   }
-  
+
   componentDidUpdate() {
-    console.log('App updated!\nNew App state: ', this.state);
+    console.log('App updated!\nNew App props: ', this.props);
   }
 
   render() {
-    console.log('App props:', this.props);
-    console.log('App state:', this.state);
+    const projectArr = [];
+
+    this.props.projectState.projects.forEach((project, i) => {
+      // console.log(project);
+      projectArr.push(<Project projectInfo={project} key={i}/>)
+    });
+
     return(
-      <div>
-        <h1>App Header</h1>
-        <Container/>
+      <div className="app">
+        <h1 id="header">App Header</h1>
+        {projectArr}
       </div>
     );
   }
+
 }
 
-export default App;
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

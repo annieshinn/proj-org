@@ -40,6 +40,7 @@ class Project extends Component {
         
       <h1>project name: {this.props.projectInfo.projectName}</h1>
         description: {this.props.projectInfo.description}
+        {taskArr}
       </div>
     );
   }
