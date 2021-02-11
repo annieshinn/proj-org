@@ -16,16 +16,9 @@ const initialState = {
   projects: [],
   newProj: '',
   newProjDesc: '',
-};//{
-//   totalMarkets: 0,
-//   totalCards: 0,
-//   marketList: [],
-//   lastMarketId: 10000,
-//   newLocation: '',
-// };
+};
 
 const projectReducer = (state = initialState, action) => {
-  let marketList;
 
   switch (action.type) {
     case types.GET_DATA: {

@@ -43,6 +43,31 @@ export const setNewProjDesc = (inputVal) => ({
   payload: inputVal,
 });
 
+export const makeTask = (projectName) => ({
+  type: types.MAKE_TASK,
+  payload: projectName,
+});
+
+export const cancelTask = (projectName) => ({
+  type: types.CANCEL_TASK,
+  payload: projectName,
+});
+
+export const renderTask = (projectName) => ({
+  type: types.RENDER_TASK,
+  payload: projectName,
+});
+
+export const setNewTaskName = (inputVal) => ({
+  type: types.SET_TASK_NAME,
+  payload: inputVal,
+});
+
+export const setNewTaskDesc = (inputVal) => ({
+  type: types.SET_TASK_DESC,
+  payload: inputVal,
+});
+
 // })
 
 // // add more action creators

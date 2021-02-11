@@ -79,3 +79,10 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
 
 ## CONNECT FRONTEND BACKEND:
 - [X] From modal, get submit button to work! -> send data to DB
+- [X] Make parallel processes for sending new tasks to DB
+
+- [X] Squash bugs re: tasks -> appropriate projects
+
+## FINAL TOUCHES
+- [ ] Make completed tasks greyed out
+- [ ] Handle spaces... everywhere
