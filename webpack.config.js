@@ -22,11 +22,25 @@ module.exports = {
           }
         }
       },
-      { // rules for css/scss
+      {
         test: /.(css|scss)$/,
-        exclude: path.resolve(__dirname, 'node_modules'),
+        exclude: [/node_modules/],
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      // {
+      //   test: /.(css|scss)$/,
+      //   include: [/client\/stylesheets/],
+      //   use: [
+      //     'style-loader',
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         modules: true,
+      //         localIdentName: '[name]__[local]___[hash:base64:5]'
+      //       },
+      //     },
+      //     'sass-loader'],
+      // },
     ],
   },
   

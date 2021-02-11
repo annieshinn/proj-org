@@ -1,11 +1,116 @@
-body {
-  background-color: rgb(105, 121, 104);
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Oswald&display=swap');
+/* @import './_variables.scss';
+sass variables still not working.. */
+
+
+
+body{
+  --main-bg-color: #3B4252;
+  --secondary-bg-color: #434C5E;
+  --tertiary-bg-color: #4C566A;
+
+  --main-font-color: #ECEFF4;
+  --secondary-font-color: #434C5E;
+  --tertiary-font-color: #4C566A;
+
+  --shadow-color: #1d20296c;
+  --border-radius: 7px;
+
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  font-family: Oswald, Arial, Helvetica;
+  letter-spacing: 1px;
+}
+
+h1{
+  text-align: center;
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#projectContainer{
+  width: 80vw;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 5px 5px 5px var(--shadow-color);
+  background-color: var(--secondary-bg-color);
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 20px;
+
 }
 
 .project{
-  /* background-color: blue; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: var(--border-radius);
+  background-color: var(--tertiary-bg-color);
+  box-shadow: 5px 5px 5px var(--shadow-color);
+  /* align-items: center; */
+}
+
+#projectInfo{
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: var(--border-radius);
+  background-color: var(--main-bg-color);
+  box-shadow: 3px 3px 5px var(--shadow-color);
+}
+
+h2{
+  text-align: center;
+}
+
+#taskContainer{
+  height: 350px;
+  overflow-y: scroll;
+
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-bg-color);
+  box-shadow: 3px 3px 5px var(--shadow-color);
 }
 
 .task{
-  background-color: blue;
+  border-radius: var(--border-radius);
+  background-color: var(--main-bg-color);
+  padding: 10px;
+  margin: 10px;
+}
+
+h3{
+}
+
+.description{
+  color:#b1b8c2;
+}
+
+.buttonArea{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+button{
+  background-color: #4C566A;
+  color: #ECEFF4;
+  font-family: Oswald, Arial, Helvetica;
+  letter-spacing: 1px;
+  border: 0px solid black;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 2px 2px 5px var(--shadow-color);
+  border-radius: var(--border-radius);
 }

@@ -54,8 +54,17 @@ class App extends Component {
 
     return(
       <div className="app">
-        <h1 id="header">App Header</h1>
-        {projectArr}
+
+        <h1 id="header">multi-project-organizer</h1>
+
+        <div className="buttonArea">
+          <button id="addProject">Add Project</button>
+        </div>
+
+        <div id="projectContainer">
+          {projectArr}
+        </div>
+
       </div>
     );
   }

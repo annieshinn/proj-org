@@ -62,5 +62,9 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
 - [X] Pass down data as props
 
 ## BACKEND PT 2:
-- [ ] Add "task" functionality
-- [ ] Connect and test -- see it on the webpage
+- [X] Add "task" functionality
+- [X] Connect and test -- see it on the webpage
+
+## FRONTEND PT 3:
+- [X] CSS styling -- make distinct project/task components
+    ... tried and failed to use sass/.scss files

@@ -30,17 +30,31 @@ class Project extends Component {
     
     const taskArr = [];
 
-    this.props.projectInfo.tasks.forEach((task, i) => {
+    this.props.projectInfo.tasks.reverse().forEach((task, i) => {
       // console.log(task);
       taskArr.push(<Task taskInfo={task} key={i}/>)
     });
 
     return (
       <div className='project'> 
-        
-      <h1>project name: {this.props.projectInfo.projectName}</h1>
-        description: {this.props.projectInfo.description}
+      
+      <div id='projectInfo'>
+        <h2>project name: {this.props.projectInfo.projectName}</h2>
+
+        <div className="description">
+          description: {this.props.projectInfo.description}
+        </div>
+
+      </div>
+
+      <div className="buttonArea">
+          <button id="editProject">Edit Project</button>
+          <button id="addTask">Add Task</button>
+      </div>
+
+      <div id='taskContainer'>
         {taskArr}
+      </div>
       </div>
     );
   }

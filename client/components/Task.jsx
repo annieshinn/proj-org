@@ -30,8 +30,19 @@ class Task extends Component {
     return (
       <div className='task'> 
         
-      <h1>task name: {this.props.taskInfo.taskName}</h1>
+      <h3>task name: {this.props.taskInfo.taskName}</h3>
+
+      
+
+      <div className="buttonArea">
+          <button id="editTask">Edit Task</button>
+          <button id="completeTask">Complete Task</button>
+          <button id="moreInfo">More Info</button>
+      </div>
+
+      <div className="description">
         description: {this.props.taskInfo.description}
+      </div>
       </div>
     );
   }
