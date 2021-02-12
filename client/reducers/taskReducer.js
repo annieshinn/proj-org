@@ -25,7 +25,7 @@ const taskReducer = (state = initialState, action) => {
       console.log('action payload: ', action.payload);
 
       document.querySelector('.' + action.payload + '#addTaskModal').style.display='flex';
-      document.querySelector('.' + action.payload + '#addTask').style.display='none';
+      // document.querySelector('.' + action.payload + '#addTask').style.display='none';
 
       return {
         ...state
@@ -37,24 +37,21 @@ const taskReducer = (state = initialState, action) => {
       console.log('action payload: ', action.payload);
 
       document.querySelector('.' + action.payload + '#addTaskModal').style.display='none';
-      document.querySelector('.' + action.payload + '#addTask').style.display='block';
 
       return {
-        ...state
+        ...state,
       }
     }
 
     case types.RENDER_TASK: {
       console.log("RENDER_TASK running!");
       console.log('action payload: ', action.payload);
+      console.log('LOOOK HERE', action.payload)
 
-      document.getElementById('addTaskModal').style.display='none';
-      document.getElementById('addTask').style.display='block';
+      document.querySelector('.' + action.payload + '#addTaskModal').style.display='none';
 
       return {
         ...state,
-        newTask: '',
-        newTaskDesc: '',
       }
     }
 

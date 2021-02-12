@@ -30,11 +30,14 @@ class Task extends Component {
     return (
       <div className='task'> 
         
-      <h3>task name: {this.props.taskInfo.taskName}</h3>
+      <h3>
+        {this.props.taskInfo.taskName}
+      </h3>
+
       <hr></hr>
 
       <div className="description">
-        description: {this.props.taskInfo.description}
+        {this.props.taskInfo.description}
       </div>
       
 

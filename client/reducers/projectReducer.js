@@ -37,7 +37,6 @@ const projectReducer = (state = initialState, action) => {
       console.log('action payload: ', action.payload);
 
       document.getElementById('addProjectModal').style.display='flex';
-      document.getElementById('addProject').style.display='none';
 
       return {
         ...state
@@ -49,7 +48,6 @@ const projectReducer = (state = initialState, action) => {
       console.log('action payload: ', action.payload);
 
       document.getElementById('addProjectModal').style.display='none';
-      document.getElementById('addProject').style.display='block';
 
       return {
         ...state
@@ -61,7 +59,6 @@ const projectReducer = (state = initialState, action) => {
       console.log('action payload: ', action.payload);
 
       document.getElementById('addProjectModal').style.display='none';
-      document.getElementById('addProject').style.display='block';
 
       return {
         ...state,

@@ -34,6 +34,7 @@ class Project extends Component {
     const taskComponentsArr = [];
 
     for (let i = taskArr.length - 1; i >= 0; i -= 1) {
+      // TBC -- grey out completed items
       taskComponentsArr.push(<Task taskInfo={taskArr[i]} key={i}/>)
     }
 
@@ -44,12 +45,14 @@ class Project extends Component {
       <div className='project'> 
       
       <div id='projectInfo'>
-        <h2 className='projectName'>project name: {this.props.projectInfo.projectName}</h2>
+        <h2 className='projectName'>
+          {this.props.projectInfo.projectName}
+        </h2>
 
         <hr style={{width: '300px'}}></hr>
 
         <div className="description">
-          description: {this.props.projectInfo.description}
+          {this.props.projectInfo.description}
         </div>
 
       </div>

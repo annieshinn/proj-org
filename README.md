@@ -1,7 +1,9 @@
 # multi-project-organizer
 Solo Project -- a multi-project-organizer to keep track of where you left off on various projects.
 
-## TO DO LIST:
+## DAY 1 AND DAY 2
+
+### TO DO LIST:
 - [X] Create repository on github, and clone down to my machine
 - [X] Run `npm init -y` to create a package.json. [Docs](https://docs.npmjs.com/cli/v6/commands/npm-init)
 - [X] Install/add other dependencies (affects package.json)
@@ -30,7 +32,7 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
   - [X] Finalize compatiblity with css, react, 
   - [X] use nodemon and webpack-dev-server
 
-## FRONTEND: REACT/REDUX 
+### FRONTEND: REACT/REDUX 
 - [X] Get something to show on localhost:3000
 - [X] Connect React/Redux components in client folder
   - [X] createStore -> connect redux extension
@@ -40,7 +42,7 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
   - [X] Connect components
 - [X] Setup a basic CSS file
 
-## BACKEND/SERVER:
+### BACKEND/SERVER:
   - [X] Get localhost:3000 connected
   - [X] Get mongoDB connected
   - [X] Set up file structure for server side (controllers, models, routes)
@@ -51,38 +53,43 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
     - [X] D delete a project
   - [X] Now repeat for TASKS :D
 
-## CONNECT FRONTEND BACKEND:
+### CONNECT FRONTEND BACKEND:
 - [X] Try to get the database info to transfer to react state
   - was a struggle but I DID IT!!
   - use "proxy" for webpack-dev-server to work
   - used a fetch request in "container"
 
-## FRONTEND PT 2:
+### FRONTEND PT 2:
 - [X] Complete components
 - [X] Pass down data as props
 
-## BACKEND PT 2:
+### BACKEND PT 2:
 - [X] Add "task" functionality
 - [X] Connect and test -- see it on the webpage
 
-## FRONTEND PT 3:
+### FRONTEND PT 3:
 - [X] CSS styling -- make distinct project/task components
     ... tried and failed to use sass/.scss files
 - [X] Make buttons!
 
+## DAY 3
 --- commiting here to end day2 02/10 ---
 
-## FRONTEND: BUCKLE DOWN
+### FRONTEND: BUCKLE DOWN
 - [X] Narrow down buttons for now... focus on "Add Project"
 - [X] Create modal for "add project"
 - [X] Get "Add Project" button to open modal! (+closing buttons)
 
-## CONNECT FRONTEND BACKEND:
+### CONNECT FRONTEND BACKEND:
 - [X] From modal, get submit button to work! -> send data to DB
 - [X] Make parallel processes for sending new tasks to DB
 
 - [X] Squash bugs re: tasks -> appropriate projects
+- [X] Handle spaces and punctuaton... everywhere
+    - [X] "submit" button w/ space projects
 
-## FINAL TOUCHES
-- [ ] Make completed tasks greyed out
-- [ ] Handle spaces... everywhere
+
+### CSS Stretch Features:
+- [X] Make modals pop ups rather than expand page
+- [ ] Grey out completed tasks
+- [ ] Handle projects with punctuation in name better

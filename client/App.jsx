@@ -76,7 +76,12 @@ class App extends Component {
     const taskDescription = document.querySelector('#taskDescription')
     console.log('submitTask has been called')
     console.log('LOOKHERE', projectName)
-    const url = '/project/' + projectName + '/task'
+
+    // HANDLE SPACING! WE REPLACE SPACE WITH _ FOR CLASS NAME
+    // NOW REPLACE _ WITH %20 FOR URL
+    const underscoreToPercent = projectName.replace(/_/g, '%20');
+
+    const url = '/project/' + underscoreToPercent + '/task'
 
     const taskData = {
       taskName: this.props.taskState.newTask,
@@ -91,7 +96,7 @@ class App extends Component {
         'Content-Type': 'application/json'
       }
     })
-      .then(this.props.renderProject)
+      .then(this.props.renderTask(projectName))
       .then(this.populateData)
       .catch((err) => err);
   }
@@ -115,14 +120,15 @@ class App extends Component {
   }
 
   render() {
-    const projectArr = [];
+    const projectArr = this.props.projectState.projects;
 
-    const noSpaceProj = 
+    // const noSpaceProj = TBC
 
-    this.props.projectState.projects.forEach((project, i) => {
-      // console.log(project);
-      projectArr.push(<Project
-        projectInfo={project}
+    const projectComponentsArr = [];
+
+    for (let i = projectArr.length - 1; i >= 0; i -= 1) {
+      projectComponentsArr.push(<Project
+        projectInfo={projectArr[i]}
         key={i}
         makeTask={this.props.makeTask}
         setNewTaskDesc={this.props.setNewTaskDesc}
@@ -130,7 +136,7 @@ class App extends Component {
         submitTask={this.submitTask}
         cancelTask={this.props.cancelTask}
       />)
-    });
+    };
 
     return(
       <div className="app">
@@ -149,7 +155,7 @@ class App extends Component {
         />
 
         <div id="projectContainer">
-          {projectArr}
+          {projectComponentsArr}
         </div>
 
       </div>

@@ -54,7 +54,7 @@ hr{
 
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 20px;
-
+  margin-bottom: 75px;
 }
 
 /* EACH PROJECT BOX */
@@ -72,7 +72,7 @@ hr{
 
   /* PROJECT BOX: INFO SECTION */
 #projectInfo{
-  padding-bottom: 15px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,11 +80,14 @@ hr{
   border-radius: var(--border-radius);
   background-color: var(--tertiary-bg-color);
   box-shadow: 3px 3px 5px var(--shadow-color);
+
+  overflow: hidden;
 }
 
 h2.projectName{
   text-align: center;
   text-shadow: 3px 3px var(--shadow-color);
+  padding: none;
 }
 
   /* PROJECT BOX: TASK SECTION */
@@ -100,6 +103,7 @@ h2.projectName{
 .task{
   border-radius: var(--border-radius);
   background-color: var(--tertiary-bg-color);
+  box-shadow: 2px 2px 5px var(--shadow-color);
   padding: 10px;
   margin: 10px;
 }
@@ -141,17 +145,20 @@ button{
   padding: 20px;
   margin-bottom: 20px;
   border-radius: var(--border-radius);
-  background-color: var(--tertiary-bg-color);
+  /* background-color: var(--tertiary-bg-color); */
+  background-image: url(https://64.media.tumblr.com/04ff549b92bb99db8ad725a83e288030/tumblr_inline_n258pty5wY1qhwjx8.gif);
+  box-shadow: 5px 5px 5px var(--shadow-color);
 
   display: none; /* NONE VS FLEX CHANGES HERE */
   flex-direction: column;
   gap: 10px;
   align-items: stretch;
 
-  /* STRETCH: popup rather than open
-  position: relative;
-  bottom: 0px;
-  z-index: 1; */
+  /* STRETCH: popup rather than open */
+  position: absolute;
+  top: 200px;
+  margin: auto;
+  z-index: 1;
 }
 
 button#submitProject{
@@ -180,27 +187,19 @@ textarea.description{
   color: var(--main-bg-color);
 }
 
-
-/* TBC */
-
-#taskInput{
-  /* width: 20px; */
-  margin-right: 15px;
-  margin-left: 15px;
-  flex-grow: 1;
-}
-
 /* CREATE TASK MODAL */
 
 #addTaskModal{
-  width: 20vw;
+  width: 15vw;
   /* height: 10vw; */
   min-width: 300px;
   min-height: 200px;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: var(--border-radius);
-  background-color: var(--secondary-bg-color);
+  /* background-color: var(--tertiary-bg-color); */
+  background-image: url(https://64.media.tumblr.com/04ff549b92bb99db8ad725a83e288030/tumblr_inline_n258pty5wY1qhwjx8.gif);
+  box-shadow: 5px 5px 5px var(--shadow-color);
   align-self: center;
 
   display: none; /* NONE VS FLEX CHANGES HERE */
@@ -208,4 +207,16 @@ textarea.description{
   flex-direction: column;
   gap: 10px;
   align-items: stretch;
+
+  position: absolute;
+  top: 200px;
+  margin: auto;
+  z-index: 1;
+}
+
+
+button#submitTask{
+  background-color: var(--main-bg-color);
+  width: 200px;
+  align-self: center;
 }
