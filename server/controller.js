@@ -30,6 +30,20 @@ const controller = {
 
   },
 
+  // TO BE CONTINUED
+  completeTask(req, res) {
+    // ProjectModel
+    //   .findOneAndUpdate({projectName: req.params.projectName}, {complete: true}, {new: true})
+    //   .then((data) => {
+    //     console.log('req.params.taskName: ', req.params.taskName);
+    //     console.log('/// Completed tasks: ', data);
+    //     return res.sendStatus(200);
+    //   })
+    //   .catch((err) => {
+    //     return res.status(404).send({err: 'Error updating/PATCH-ing project data re:tasks'});
+    //   });
+  },
+
   // deleteTask(req, res) {
   //   TaskModel
   //     .findOneAndDelete({taskName: req.params.taskName})

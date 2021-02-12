@@ -65,7 +65,8 @@ hr{
   flex-direction: column;
 
   border-radius: var(--border-radius);
-  background-color: var(--secondary-bg-color);
+  /* background-color: var(--secondary-bg-color); */
+  background-image: url(https://64.media.tumblr.com/d249339336e54c5916984cf820ba72c2/tumblr_inline_n258pmUe5i1qhwjx8.png);
   box-shadow: 5px 5px 5px var(--shadow-color);
   /* align-items: center; */
 }
@@ -80,6 +81,7 @@ hr{
   border-radius: var(--border-radius);
   background-color: var(--tertiary-bg-color);
   box-shadow: 3px 3px 5px var(--shadow-color);
+  opacity: .9;
 
   overflow: hidden;
 }
@@ -104,6 +106,17 @@ h2.projectName{
   border-radius: var(--border-radius);
   background-color: var(--tertiary-bg-color);
   box-shadow: 2px 2px 5px var(--shadow-color);
+  opacity: .8;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+}
+
+.completedTask{
+  border-radius: var(--border-radius);
+  background-color: var(--tertiary-bg-color);
+  box-shadow: 2px 2px 5px var(--shadow-color);
+  opacity: .2;
   padding: 10px;
   margin: 10px;
 }
@@ -133,6 +146,13 @@ button{
   box-shadow: 2px 2px 5px var(--shadow-color);
   border-radius: var(--border-radius);
   font-size: 15px;
+}
+
+button#completeTask{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: var(--main-bg-color);
 }
 
 /* CREATE PROJECT MODAL */

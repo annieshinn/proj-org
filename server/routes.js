@@ -13,10 +13,7 @@ router.post('/:projectName/task',
   controller.updateProjectTasks
 );
 
-// router.delete('/:projectName/task/:taskName',
-//   controller.deleteTask,
-// );
-
+router.patch('/:projectName/task/:taskName', controller.completeTask);
 /// PROJECTS ///
 
 

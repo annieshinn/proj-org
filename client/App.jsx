@@ -47,7 +47,7 @@ class App extends Component {
     this.populateData = this.populateData.bind(this);
     this.submitTask = this.submitTask.bind(this);
   }
-  
+
   submitProject(e) {
     const projectName = document.querySelector('#projectName')
     const projectDescription = document.querySelector('#projectDescription')
@@ -69,6 +69,33 @@ class App extends Component {
     .then(this.props.renderProject)
     .then(this.populateData)
     .catch((err) => err);
+  }
+
+  completeTask(projectNameAndTaskName) {
+    // const projectName = e.className;
+    // const taskName = e.id;
+    console.log('LOOOOOK', projectNameAndTaskName)
+    const underscoreToPercent = projectNameAndTaskName.replace(/_/g, '%20');
+
+    const url = '/project/' + underscoreToPercent;
+
+    const projectName = url.split('/')[2];
+
+    console.log(projectName)
+
+
+    // sends patch request
+    fetch(url, {
+      method: 'PATCH',
+      body: JSON.stringify('true'),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      // .then(this.props.renderTask(projectName))
+      .then(this.populateData)
+      .catch((err) => err);
+
   }
   
   submitTask(projectName) {
@@ -135,6 +162,7 @@ class App extends Component {
         setNewTaskName={this.props.setNewTaskName}
         submitTask={this.submitTask}
         cancelTask={this.props.cancelTask}
+        completeTask={this.completeTask}
       />)
     };
 

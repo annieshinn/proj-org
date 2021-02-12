@@ -25,14 +25,20 @@ class Task extends Component {
   }
   
   render() {
-    console.log('Task props: ', this.props.taskInfo);
+    console.log('Task props: ', this.props);
 
     return (
-      <div className='task'> 
+      <div className={this.props.class}> 
         
       <h3>
         {this.props.taskInfo.taskName}
       </h3>
+      
+      <button id="completeTask"
+        // key={this.props.taskInfo.taskName}
+        className={this.props.projectName +'/task/' + this.props.taskInfo.taskName}
+        onClick={(e) => this.props.completeTask(e.target.className)}
+      >Complete Task</button>
 
       <hr></hr>
 
@@ -43,7 +49,6 @@ class Task extends Component {
 
       <div className="buttonArea">
           {/* <button id="editTask">Edit Task</button> */}
-          {/* <button id="completeTask">Complete Task</button> */}
           {/* <button id="moreInfo">More Info</button> */}
       </div>
 

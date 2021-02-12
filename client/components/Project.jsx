@@ -32,14 +32,31 @@ class Project extends Component {
     const taskArr = this.props.projectInfo.tasks
 
     const taskComponentsArr = [];
-
-    for (let i = taskArr.length - 1; i >= 0; i -= 1) {
-      // TBC -- grey out completed items
-      taskComponentsArr.push(<Task taskInfo={taskArr[i]} key={i}/>)
-    }
-
+    
     // HANDLE SPACING! FOR PROJECTS WITH SPACES
     const noSpaceName = this.props.projectInfo.projectName.replace(/\s/g, '_');
+
+    for (let i = taskArr.length - 1; i >= 0; i -= 1) {
+      if(taskArr[i].complete === false) {
+        taskComponentsArr.push(<Task
+          taskInfo={taskArr[i]}
+          key={i}
+          projectName={noSpaceName}
+          completeTask={this.props.completeTask}
+          class='task'/>)
+      }
+    }
+
+    for (let i = taskArr.length - 1; i >= 0; i -= 1) {
+      if(taskArr[i].complete === true) {
+        taskComponentsArr.push(<Task
+          taskInfo={taskArr[i]}
+          key={i}
+          projectName={noSpaceName}
+          completeTask={this.props.completeTask}
+          class='completedTask'/>)
+      }
+    }
 
     return (
       <div className='project'> 

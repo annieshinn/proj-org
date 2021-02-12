@@ -91,5 +91,7 @@ Solo Project -- a multi-project-organizer to keep track of where you left off on
 
 ### CSS Stretch Features:
 - [X] Make modals pop ups rather than expand page
-- [ ] Grey out completed tasks
+- [X] Complete button
+- [X] Grey out completed tasks
+- [ ] Complete button functionality
 - [ ] Handle projects with punctuation in name better

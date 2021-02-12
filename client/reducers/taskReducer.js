@@ -46,7 +46,6 @@ const taskReducer = (state = initialState, action) => {
     case types.RENDER_TASK: {
       console.log("RENDER_TASK running!");
       console.log('action payload: ', action.payload);
-      console.log('LOOOK HERE', action.payload)
 
       document.querySelector('.' + action.payload + '#addTaskModal').style.display='none';
 
@@ -70,7 +69,6 @@ const taskReducer = (state = initialState, action) => {
         newTaskDesc: action.payload,
       };
     }
-
 
     default: {
       return state;
